@@ -1,0 +1,15 @@
+.contact {
+  padding: 8px;
+  width: 280px;
+  border: 2px solid #0c0c0c;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: space-between;
+}
+.text {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
