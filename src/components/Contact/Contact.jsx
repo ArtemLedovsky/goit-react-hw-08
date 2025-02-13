@@ -2,7 +2,7 @@ import s from "./Contact.module.css";
 import { FaPhone } from "react-icons/fa6";
 import { FaUserLarge } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsOps";
+import { deleteContact } from "../../redux/contacts/operations";
 
 const Contact = ({ contactName, contactNumber, contactId }) => {
   const dispatch = useDispatch();
@@ -19,7 +19,12 @@ const Contact = ({ contactName, contactNumber, contactId }) => {
           {contactNumber}
         </p>
       </div>
-      <button onClick={() => dispatch(deleteContact(contactId))}>Delete</button>
+      <button
+        className="btn bg-red-100 font-light hover:bg-red-200 ease-in duration-200"
+        onClick={() => dispatch(deleteContact(contactId))}
+      >
+        Delete
+      </button>
     </div>
   );
 };

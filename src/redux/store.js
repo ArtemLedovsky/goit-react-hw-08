@@ -1,6 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { contactsReducer } from "./contactsSlice";
-import { filtersReducer } from "./filtersSlice";
 import { authReducer } from "./auth/slice";
 import {
   persistStore,
@@ -13,6 +11,8 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { contactsReducer } from "./contacts/slice";
+import { filtersReducer } from "./filters/slice";
 const persistConfig = {
   key: "root",
   version: 1,

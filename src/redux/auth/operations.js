@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const goitApi = axios.create({
+export const goitApi = axios.create({
   baseURL: "https://connections-api.goit.global/",
 });
 

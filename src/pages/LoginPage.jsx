@@ -1,45 +1,10 @@
-import { Field, Form, Formik } from "formik";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { login } from "../redux/auth/operations";
+import LoginForm from "../components/LoginForm/LoginForm";
 
 const LoginPage = () => {
-  const dispatch = useDispatch();
-  const initialValues = { email: "", password: "" };
-
-  const handleSubmit = (values, options) => {
-    dispatch(login(values));
-    options.resetForm();
-  };
-
   return (
-    <div className="bg-amber-50 flex flex-col items-center justify-center min-h-screen gap-4">
+    <div className=" flex flex-col items-center justify-center  gap-4 py-20">
       <h2 className="text-5xl font-bold">Login now!</h2>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form className="flex flex-col  w-fit px-20 py-8 rounded-xl shadow-xl bg-white gap-4">
-          <label className="flex flex-col gap-2">
-            <span className="fieldset-label cursor-pointer">Email</span>
-            <Field className="input input-warning" type="email" name="email" />
-          </label>
-          <label className="flex flex-col gap-2">
-            <span className="fieldset-label cursor-pointer">Password</span>
-            <Field
-              className="input input-warning"
-              type="password"
-              name="password"
-            />
-          </label>
-          <div className="flex gap-1">
-            <p>Don`t have an account?</p>
-            <Link className="link" to="/register">
-              Click here!
-            </Link>
-          </div>
-          <button className="btn btn-neutral" type="submit">
-            Confirm
-          </button>
-        </Form>
-      </Formik>
+      <LoginForm />
     </div>
   );
 };
